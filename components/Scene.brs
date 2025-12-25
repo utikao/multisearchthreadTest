@@ -2,7 +2,7 @@ sub init()
     m.top.backgroundURI = "pkg:/images/rsgde_bg_hd.jpg"
 
     example = m.top.findNode("exampleKeyboard")
-    example.observeField("text", "StartSearch")
+    example.observeField("text", "onTextChanged")
     examplerect = example.boundingRect()
     centerx = (1280 - examplerect.width) / 2
     centery = (720 - examplerect.height) / 2
@@ -10,16 +10,25 @@ sub init()
 
     m.top.setFocus(true)
     m.searchTask = CreateObject("roSGNode", "SearchTask")
-    m.searchTask.control = "RUN"
-    m.searchTask.taskpayload = {
-        query: ""
-    }
     m.searchTask.observeField("response", "OnSearchResponse")
+    m.timer = m.top.findNode("searchDebounceTimer")
+    m.timer.observeField("fire", "onDebounceFire")
 end sub
 
-sub StartSearch(event as Object)
+sub onTextChanged(event as Object)
+    m.pendingQuery = event.getData()
+    m.timer.control = "stop"
+    m.timer.control = "start"
+end sub
+
+sub onDebounceFire()
+    if m.pendingQuery <> invalid and m.pendingQuery <> "" then
+        StartSearch(m.pendingQuery)
+    end if
+end sub
+
+sub StartSearch(searchText as string)
     ?"StartSearch"
-    searchText = event.getData()
     m.searchTask.taskpayload = {
         query: searchText
     }

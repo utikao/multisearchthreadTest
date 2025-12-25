@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<component name = "ButtonExample" extends = "Scene" initialFocus = "exampleKeyboard" >
+
+  <script type="text/brightscript" uri="Scene.brs" />
+
+
+  <children >
+
+    <Keyboard id = "exampleKeyboard" />
+
+  </children>
+
+</component>

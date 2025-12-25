@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component name="SearchTask" extends="Task">
+
+    <interface>
+        <field id="taskPayload" type="assocarray" />
+        <field id="response" type="array" />
+    </interface>
+
+    <script type="text/brightscript" uri="./SearchTask.brs" />
+    <script type="text/brightscript" uri="getJson.brs" />
+
+
+</component>

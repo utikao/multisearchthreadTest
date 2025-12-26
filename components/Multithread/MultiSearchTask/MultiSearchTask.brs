@@ -9,22 +9,6 @@ sub execute()
     m.top.response = {responce: responce,id :m.top.arrayId}
 end sub
 
-function TrimString(s as String) as String
-    start = 1
-    finish = Len(s)
-
-    while start <= finish and Mid(s, start, 1) = " "
-        start++
-    end while
-
-    while finish >= start and Mid(s, finish, 1) = " "
-        finish--
-    end while
-
-    if start > finish then return ""
-    return Mid(s, start, finish - start + 1)
-end function
-
 function BasicSearchChannels(channels as Object, query as String, startingIndex as Integer, itemsPerTask as Integer) as Object
     results = []
     while startingIndex < itemsPerTask

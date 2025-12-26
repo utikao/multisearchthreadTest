@@ -1,11 +1,9 @@
 sub init()
-    m.json = getJson()
     m.top.functionName = "execute"
 end sub
 
 sub execute()
-    taskPayload = m.top.taskPayload
-    responce = BasicSearchChannels(m.json, taskPayload.query)
+    responce = BasicSearchChannels(getJson(), m.top.taskPayload.query)
     m.top.response = responce
 end sub
 

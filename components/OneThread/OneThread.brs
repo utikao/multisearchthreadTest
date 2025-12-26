@@ -40,5 +40,5 @@ end sub
 sub OnSearchResponse(event)
     responce = event.getData()
     Print "Task took: " + m.searchTimer.TotalMilliseconds().ToStr()
-    ' ?"OnSearchResponse",responce
+    ?"OnSearchResponse",responce
 end sub

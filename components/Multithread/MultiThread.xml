@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<component name = "MultiThread" extends = "Scene" initialFocus = "exampleKeyboard" >
+
+  <script type="text/brightscript" uri="MultiThread.brs" />
+  <script type="text/brightscript" uri="TaskManager.brs" />
+  <script type="text/brightscript" uri="pkg:/components/Multithread/MultiSearchTask/Getjson.brs" />
+
+
+  <children >
+
+    <Keyboard id = "exampleKeyboard" />
+    <Timer
+      id="searchDebounceTimer"
+      duration="0.5"
+      repeat="false"
+      control="stop" />
+
+  </children>
+
+</component>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component name="MultiSearchTask" extends="Task">
+
+    <interface>
+        <field id="taskPayload" type="assocarray" />
+        <field id="response" type="assocarray" />
+        <field id="startingIndex" type="integer" />
+        <field id="itemsPerTask" type="integer" />
+        <field id="arrayId" type="integer" />
+    </interface>
+
+    <script type="text/brightscript" uri="./MultiSearchTask.brs" />
+    <script type="text/brightscript" uri="getJson.brs" />
+
+
+</component>

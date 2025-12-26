@@ -13,6 +13,7 @@ sub init()
     m.searchTask.observeField("response", "OnSearchResponse")
     m.timer = m.top.findNode("searchDebounceTimer")
     m.timer.observeField("fire", "onDebounceFire")
+    m.searchTimer = CreateObject("roTimespan")
 end sub
 
 sub onTextChanged(event as Object)
@@ -23,6 +24,7 @@ end sub
 
 sub onDebounceFire()
     if m.pendingQuery <> invalid and m.pendingQuery <> "" then
+        m.searchTimer.Mark()
         StartSearch(m.pendingQuery)
     end if
 end sub
@@ -37,5 +39,6 @@ end sub
 
 sub OnSearchResponse(event)
     responce = event.getData()
-    ?"OnSearchResponse",responce
+    Print "Task took: " + m.searchTimer.TotalMilliseconds().ToStr()
+    ' ?"OnSearchResponse",responce
 end sub

@@ -8,7 +8,9 @@ sub showChannelSGScreen()
   screen = CreateObject("roSGScreen")
   m.port = CreateObject("roMessagePort")
   screen.setMessagePort(m.port)
+  ' before start choose what system to use
   scene = screen.CreateScene("OneThread")
+  ' scene = screen.CreateScene("Multithread")
   screen.show()
 
   while(true)

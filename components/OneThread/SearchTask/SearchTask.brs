@@ -29,7 +29,7 @@ function BasicSearchChannels(channels as Object, query as String) as Object
     results = []
 
     for each item in channels
-        ?"BasicSearchChannels"
+        ' ?"BasicSearchChannels"
         if item <> invalid
             if item.title.Instr(query) <> -1 or item.category.Instr(query) <> -1 then
                 results.Push(item)

@@ -51,8 +51,10 @@ sub onResponseReceived(event as Object)
     m.tasksToLoad = m.tasksToLoad - 1
     if m.tasksToLoad = 0 then
         results = []
-        for each item in m.resultarray
-            results.push(item)
+        for each array in m.resultarray
+            for each item in array
+                results.push(item)
+            end for
         end for
         OnSearchResponse(results)
     end if

@@ -49,6 +49,7 @@ function SplitSearchChannels(channels as Object, query as String, itemsPerTask a
         item = channels[i]
         ' ?"BasicSearchChannels"
         if item <> invalid
+            'Instr is roku function that checks if string contains sub string.Instr is writen in C/C++,so its impossible to write anything in brightscript that would do its work faster.
             if item.title.Instr(query) <> -1 or item.category.Instr(query) <> -1 then
                 results.Push(item)
             end if

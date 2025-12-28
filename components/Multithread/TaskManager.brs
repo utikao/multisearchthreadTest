@@ -1,4 +1,13 @@
 sub initTaskManager()
+    'This is modified request manager.Its modified to best suit specific needs of seach,but same principle could be used without using specific tasks,with little loss in performance.
+    'I decided against using any solutions that could violate the product requirements.
+    'Search results return all items in the same order as they were received.
+    'The search starts after at least one character is entered (usually three are required).
+    'I check whether the search string appears anywhere in the title string, not only at the beginning.
+    'Items are not deleted after each search cycle to avoid performance issues when the user deletes characters.
+    'The way I got performance, required specific roku knowledge and experience, not just general programming skills.
+    'I made both multi and one thread solution,to show diference in speed  between just using one task,and true scalable multitask solution.
+    'The multi-threaded solution is designed to handle larger datasets more efficiently by distributing the workload across multiple tasks.
     m.arr = []
     m.resultarray = []
     searchTask = invalid

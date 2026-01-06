@@ -11,7 +11,7 @@ sub initTaskManager()
     m.arr = []
     m.resultarray = []
     searchTask = invalid
-    m.taskCount = 5
+    m.taskCount = 2
     m.totalItems = getJson().Count()
     fraction = m.totalItems / m.taskCount
     m.itemsPerTask = int(fraction)

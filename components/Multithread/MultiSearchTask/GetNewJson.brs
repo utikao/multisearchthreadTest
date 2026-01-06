@@ -1,0 +1,98 @@
+function GetNewJson()
+    return [
+  {
+    "id": "ch-0",
+    "title": "Hype Channel 1",
+    "isLive": true,
+    "category": {
+      "name": "Movies",
+      "subCategory": {
+        "name": "Live Events",
+        "subCategory": {
+          "name": "Breaking"
+        }
+      }
+    }
+  },
+  {
+    "id": "ch-1",
+    "title": "Global Channel 2",
+    "isLive": false,
+    "category": {
+      "name": "Movies"
+    }
+  },
+  {
+    "id": "ch-2",
+    "title": "Local Channel 3",
+    "isLive": false,
+    "category": {
+      "name": "News",
+      "subCategory": {
+        "name": "Regional",
+        "subCategory": {
+          "name": "NBA"
+        }
+      }
+    }
+  },
+  {
+    "id": "ch-3",
+    "title": "Action Channel 4",
+    "isLive": false,
+    "category": {
+      "name": "Movies",
+      "subCategory": {
+        "name": "International",
+        "subCategory": {
+          "name": "NFL"
+        }
+      }
+    }
+  },
+  {
+    "id": "ch-4",
+    "title": "Daily Channel 5",
+    "isLive": false,
+    "category": {
+      "name": "Sports",
+      "subCategory": {
+        "name": "Regional"
+      }
+    }
+  },
+  {
+    "id": "ch-5",
+    "title": "Prime Channel 6",
+    "isLive": false,
+    "category": {
+      "name": "Movies",
+      "subCategory": {
+        "name": "National"
+      }
+    }
+  },
+  {
+    "id": "ch-6",
+    "title": "Hype Channel 7",
+    "isLive": false,
+    "category": {
+      "name": "Movies"
+    }
+  },
+  {
+    "id": "ch-7",
+    "title": "Global Channel 8",
+    "isLive": false,
+    "category": {
+      "name": "Entertainment",
+      "subCategory": {
+        "name": "International",
+        "subCategory": {
+          "name": "Breaking"
+        }
+      }
+    }
+  }
+]
+end function

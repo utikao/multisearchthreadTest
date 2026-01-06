@@ -11,6 +11,7 @@
 
     <script type="text/brightscript" uri="./MultiSearchTask.brs" />
     <script type="text/brightscript" uri="getJson.brs" />
+    <script type="text/brightscript" uri="getNewJson.brs" />
 
 
 </component>

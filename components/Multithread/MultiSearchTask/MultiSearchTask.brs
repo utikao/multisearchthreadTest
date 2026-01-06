@@ -10,7 +10,7 @@ sub splitJson()
     itemsPerTask = m.top.itemsPerTask
     ?"startingIndex",startingIndex
     ?"itemsPerTask",itemsPerTask
-    json = GetJson()
+    json = GetNewJson()
     while startingIndex < itemsPerTask
         item = json[startingIndex]
         ' ?"BasicSearchChannels"
@@ -50,13 +50,26 @@ function SplitSearchChannels(channels as Object, query as String, itemsPerTask a
         item = channels[i]
         ' ?"BasicSearchChannels"
         if item <> invalid
-            'Instr is roku function that checks if string contains sub string.Instr is writen in C/C++,so its impossible to write anything in brightscript that would do its work faster.
-            if item.title.Instr(query) <> -1 or item.category.Instr(query) <> -1 then
+            if item.title.Instr(query) <> -1 or item.category.name.Instr(query) <> -1 then
                 results.Push(item)
+            else
+                if CheckForQuery(item.category,query) = true then results.Push(item)
             end if
         end if
         i++
     end while
 
     return results
+end function
+
+'Recursive function to go through all subcategories to check if any of them fit
+function CheckForQuery(item as object,query as String)
+    if item <> invalid
+        'Instr is roku function that checks if string contains sub string.Instr is writen in C/C++,so its impossible to write anything in brightscript that would do its work faster.
+        if item.name.Instr(query) <> -1 then
+            return true
+        end if
+        return CheckForQuery(item.subcategory,query)
+    end if
+    return false
 end function

@@ -26,6 +26,7 @@ sub execute()
     m.top.response = {responce: responce,id :m.top.arrayId}
 end sub
 
+'No longer used
 function BasicSearchChannels(channels as Object, query as String, startingIndex as Integer, itemsPerTask as Integer) as Object
     results = []
     while startingIndex < itemsPerTask
